@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 
-import { testAction } from '../actions/test-actions';
+import { checkArrivals } from '../actions/arrivals-actions';
 
 export default connect(
   state => ({ ...state }),
-  { testAction },
+  { checkArrivals },
 );

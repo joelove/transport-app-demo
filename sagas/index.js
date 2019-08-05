@@ -1,9 +1,9 @@
 import { fork, all } from 'redux-saga/effects';
 
-import testFlow from './test-saga';
+import arrivalsFlow from './arrivals-saga';
 
 export default function* rootSaga() {
   yield all([
-    testFlow(),
+    arrivalsFlow(),
   ]);
 }
