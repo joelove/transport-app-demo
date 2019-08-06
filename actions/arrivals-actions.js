@@ -1,14 +1,7 @@
-import {
-  CHECK_ARRIVALS,
-  STORE_ARRIVALS,
-} from '../constants/action-types/arrivals-action-types';
+import { createAction } from '../utilities';
 
-export const checkArrivals = (payload = {}) => ({
-  type: CHECK_ARRIVALS,
-  payload,
-});
+export const CHECK_ARRIVALS = 'arrivals-actions/CHECK_ARRIVALS';
+export const STORE_ARRIVALS = 'arrivals-actions/STORE_ARRIVALS';
 
-export const storeArrivals = (payload = {}) => ({
-  type: STORE_ARRIVALS,
-  payload,
-});
+export const checkArrivals = createAction(CHECK_ARRIVALS);
+export const storeArrivals = createAction(STORE_ARRIVALS);

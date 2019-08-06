@@ -1,10 +1,8 @@
-import { STORE_ARRIVALS } from '../constants/action-types/arrivals-action-types';
+import { STORE_ARRIVALS } from '../actions/arrivals-actions';
 
 const INITIAL_STATE = [];
 
-const storeArrivalsReducer = (state, { payload }) => ([
-  ...payload,
-]);
+const storeArrivalsReducer = (state, { payload }) => ([ ...payload ]);
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
