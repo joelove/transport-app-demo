@@ -4,7 +4,8 @@ import { Text, Title, View } from 'react-native';
 import PropTypes from 'prop-types';
 
 import styles from './styles';
-import mainConnector from './connectors/main-connector';
+
+import { checkArrivals } from './actions/arrivals-actions';
 
 class Main extends Component {
   componentDidMount() {
@@ -32,4 +33,7 @@ Main.propTypes = {
   arrivals: PropTypes.array.isRequired,
 };
 
-export default mainConnector(Main);
+export default connect(
+  state => ({ ...state }),
+  { checkArrivals },
+)(Main);
