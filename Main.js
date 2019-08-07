@@ -4,23 +4,20 @@ import { Text, Title, View } from 'react-native';
 import PropTypes from 'prop-types';
 
 import styles from './styles';
-
-import { checkArrivals } from './actions/arrivals-actions';
+import { pollArrivals } from './actions/arrivals-actions'
 
 class Main extends Component {
   componentDidMount() {
-    const { checkArrivals } = this.props;
-    checkArrivals();
+    const { pollArrivals } = this.props;
+    pollArrivals();
   }
 
   render() {
-    const { arrivals } = this.props;
-
     return (
       <View style={styles.main}>
         <Text h1 style={styles.h1}>Arrivals</Text>
-        {arrivals.map(
-          ({ id, expectedArrival, destinationName, lineName }) => (
+        {this.props.arrivals.map(
+          ({ id, destinationName, lineName }) => (
             <Text key={id}>{lineName} {destinationName}</Text>
           )
         )}
@@ -34,6 +31,7 @@ Main.propTypes = {
 };
 
 export default connect(
-  state => ({ ...state }),
-  { checkArrivals },
+  state => ({ ...state }), {
+    pollArrivals,
+  },
 )(Main);

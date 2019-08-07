@@ -1,5 +1,6 @@
 {
   "main": "node_modules/expo/AppEntry.js",
+  "license": "MIT",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
@@ -24,6 +25,5 @@
     "babel-plugin-transform-inline-environment-variables": "^0.4.3",
     "babel-preset-expo": "^6.0.0"
   },
-  "private": true,
-  "license": "MIT"
+  "private": true
 }
