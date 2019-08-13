@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Text, Title, View } from 'react-native';
+import { Text, Title, View, Image } from 'react-native';
 import PropTypes from 'prop-types';
 
 import styles from './styles';
@@ -13,10 +13,16 @@ class Main extends Component {
   }
 
   render() {
+    const arrivals = this.props.arrivals.slice().sort(
+      (a, b) => a.expectedArrival.localeCompare(b.expectedArrival)
+    );
+
     return (
       <View style={styles.main}>
-        <Text h1 style={styles.h1}>Arrivals</Text>
-        {this.props.arrivals.map(
+        <Image source={require('./assets/logo.png')} style={styles.logo} />
+        <Text h1 style={styles.h1}>Arrivals Board</Text>
+        <Text h2 style={styles.h2}>Stop GA (Balgonie Road)</Text>
+        {arrivals.map(
           ({ id, destinationName, lineName }) => (
             <Text key={id}>{lineName} {destinationName}</Text>
           )

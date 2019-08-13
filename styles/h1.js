@@ -1,4 +1,4 @@
 export default {
   fontSize: 30,
-  paddingBottom: 15,
+  paddingBottom: 5,
 };

@@ -8,8 +8,8 @@ import {
 
 import { getArrivals } from '../services/api-service';
 
-const SECOND = 1000;
-const TEN_SECONDS = 10 * SECOND;
+const ONE_SECOND = 1000;
+const TEN_SECONDS = 10 * ONE_SECOND;
 
 export function* pollArrivals(payload) {
   yield call(checkArrivals, payload);
